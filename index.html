@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Certificate Courses — Business &amp; Healthcare</title>
+<meta name="description" content="A curated, verified list of free online courses with certificates, covering business administration and healthcare.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Free Certificate Courses</h1>
+    <p class="tagline">Business administration &amp; healthcare — curated, and checked against the live course page before listing.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="controls" aria-label="Filters">
+    <div class="control-group" role="group" aria-label="Filter by field">
+      <span class="control-label">Field</span>
+      <button type="button" class="chip chip-field is-active" data-field="all">All</button>
+      <button type="button" class="chip chip-field" data-field="business">Business Administration</button>
+      <button type="button" class="chip chip-field" data-field="healthcare">Healthcare</button>
+    </div>
+    <div class="control-group" role="group" aria-label="Filter by level">
+      <span class="control-label">Level</span>
+      <button type="button" class="chip chip-level is-active" data-level="all">All</button>
+      <button type="button" class="chip chip-level" data-level="introductory">Introductory</button>
+      <button type="button" class="chip chip-level" data-level="intermediate">Intermediate</button>
+      <button type="button" class="chip chip-level" data-level="advanced">Advanced</button>
+    </div>
+    <div class="control-group" role="group" aria-label="Filter by certificate cost">
+      <span class="control-label">Certificate</span>
+      <button type="button" class="chip chip-cert is-active" data-cert="all">All</button>
+      <button type="button" class="chip chip-cert" data-cert="free">Free certificate only</button>
+    </div>
+  </section>
+
+  <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+  <section id="courseList" class="course-list" aria-label="Courses"></section>
+
+  <p class="empty-state" id="emptyState" hidden>No courses match these filters. Try widening your selection.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Course terms (free/paid, live status) change often — always confirm on the provider's own page before enrolling. Data last reviewed on the date shown on each card.</p>
+    <p>Data source: <code>data/courses.json</code>. See <a href="README.md">README</a> for how to add or update courses.</p>
+  </div>
+</footer>
+
+<template id="courseCardTemplate">
+  <article class="course-card">
+    <div class="card-top">
+      <span class="badge badge-field"></span>
+      <span class="badge badge-level"></span>
+    </div>
+    <h3 class="course-title"></h3>
+    <p class="course-provider"></p>
+    <p class="course-description"></p>
+    <p class="course-meta"></p>
+    <p class="cert-note"></p>
+    <a class="enroll-link" target="_blank" rel="noopener noreferrer">
+      <span class="enroll-text">Go to course on provider's site</span>
+      <span class="enroll-icon" aria-hidden="true">↗</span>
+    </a>
+  </article>
+</template>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -219,5 +219,83 @@
     "duration": "1 week at ~10 hrs/week, self-paced",
     "url": "https://www.coursera.org/learn/introduction-to-healthcare-management",
     "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "saylor-bus202",
+    "title": "Principles of Finance",
+    "provider": "Saylor Academy",
+    "description": "Covers core corporate finance concepts — time value of money, financial statement analysis, capital budgeting, and an introduction to stocks and bonds.",
+    "fields": ["finance"],
+    "level": "introductory",
+    "certificate": "free",
+    "certificateNote": "100% free course. Free certificate of completion after passing the final exam.",
+    "duration": "33 hours, self-paced",
+    "url": "https://learn.saylor.org/course/bus202",
+    "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "saylor-bus103",
+    "title": "Introduction to Financial Accounting",
+    "provider": "Saylor Academy",
+    "description": "Introduces the four core financial statements — income statement, balance sheet, cash flow statement, and statement of shareholders' equity.",
+    "fields": ["finance"],
+    "level": "introductory",
+    "certificate": "free",
+    "certificateNote": "100% free course. Free certificate of completion after passing the final exam.",
+    "duration": "63 hours, self-paced",
+    "url": "https://learn.saylor.org/course/bus103",
+    "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "saylor-bus601",
+    "title": "Financial Management",
+    "provider": "Saylor Academy",
+    "description": "Graduate-level survey of corporate financial decision-making, covering capital investment, financing choices, and how management creates shareholder value.",
+    "fields": ["finance"],
+    "level": "advanced",
+    "certificate": "free",
+    "certificateNote": "100% free course. Free certificate of completion after passing the final exam.",
+    "duration": "55 hours, self-paced",
+    "url": "https://learn.saylor.org/course/bus601",
+    "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "coursera-yale-financial-markets",
+    "title": "Financial Markets",
+    "provider": "Coursera (Yale University)",
+    "description": "Robert Shiller's survey of banking, insurance, and securities markets, covering risk management and behavioral finance principles behind how financial institutions function.",
+    "fields": ["finance"],
+    "level": "introductory",
+    "certificate": "paid",
+    "certificateNote": "Free to enroll and complete. Earning the shareable certificate requires a Coursera Plus subscription (financial aid available).",
+    "duration": "7 weeks at ~3-4 hrs/week, self-paced",
+    "url": "https://www.coursera.org/learn/financial-markets-global",
+    "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "edx-columbia-corporate-finance",
+    "title": "Introduction to Corporate Finance",
+    "provider": "edX (Columbia University)",
+    "description": "Key financial concepts for evaluating and valuing investment opportunities, including how to value stocks and bonds.",
+    "fields": ["finance"],
+    "level": "introductory",
+    "certificate": "paid",
+    "certificateNote": "Free to audit all course content. A paid Verified Certificate is required to earn a certificate.",
+    "duration": "3 months at 3-4 hrs/week, self-paced",
+    "url": "https://www.edx.org/learn/corporate-finance/columbia-university-introduction-to-corporate-finance",
+    "verifiedOn": "2026-09-16"
+  },
+  {
+    "id": "edx-cambridge-foundations-finance",
+    "title": "Foundations of Finance",
+    "provider": "edX (University of Cambridge)",
+    "description": "Covers the financial understanding and applied finance skills non-finance professionals need to progress in their careers.",
+    "fields": ["finance"],
+    "level": "introductory",
+    "certificate": "paid",
+    "certificateNote": "Free to audit all course content. A paid Verified Certificate is required to earn a certificate.",
+    "duration": "3 months at 3-5 hrs/week, self-paced",
+    "url": "https://www.edx.org/learn/finance/university-of-cambridge-foundations-of-finance",
+    "verifiedOn": "2026-09-16"
   }
 ]

@@ -15,18 +15,48 @@
     advanced: "Advanced"
   };
 
+  // Canonical priority order: also used to pick a course's primary (border/first-listed) field
+  // when it belongs to more than one.
+  var FIELD_ORDER = ["business", "healthcare", "finance"];
+
   var FIELD_LABEL = {
     business: "Business Administration",
     healthcare: "Healthcare",
-    "business+healthcare": "Business & Healthcare"
+    finance: "Finance"
   };
 
+  function activeFields(fields) {
+    return FIELD_ORDER.filter(function (f) {
+      return fields.indexOf(f) !== -1;
+    });
+  }
+
   function fieldKey(fields) {
-    var hasBusiness = fields.indexOf("business") !== -1;
-    var hasHealthcare = fields.indexOf("healthcare") !== -1;
-    if (hasBusiness && hasHealthcare) return "business+healthcare";
-    if (hasHealthcare) return "healthcare";
-    return "business";
+    return activeFields(fields).join("+");
+  }
+
+  function fieldLabel(fields) {
+    return activeFields(fields)
+      .map(function (f) { return FIELD_LABEL[f]; })
+      .join(" & ");
+  }
+
+  function primaryField(fields) {
+    return activeFields(fields)[0];
+  }
+
+  function fieldBadgeStyle(active) {
+    if (active.length <= 1) {
+      var f = active[0];
+      return { background: "var(--color-" + f + "-bg)", color: "var(--color-" + f + ")" };
+    }
+    var n = active.length;
+    var stops = active.map(function (f, i) {
+      var start = (i / n) * 100;
+      var end = ((i + 1) / n) * 100;
+      return "var(--color-" + f + "-bg) " + start + "%, var(--color-" + f + "-bg) " + end + "%";
+    }).join(", ");
+    return { background: "linear-gradient(90deg, " + stops + ")", color: "var(--color-text)" };
   }
 
   function matchesFilters(course) {
@@ -52,15 +82,18 @@
   function buildCard(course) {
     var node = template.content.cloneNode(true);
     var card = node.querySelector(".course-card");
-    var fk = fieldKey(course.fields);
+    var active = activeFields(course.fields);
+    var primary = primaryField(course.fields);
 
-    card.dataset.primaryField = course.fields.indexOf("healthcare") !== -1 && course.fields.indexOf("business") === -1
-      ? "healthcare"
-      : "business";
+    card.dataset.primaryField = primary;
+    card.style.borderLeftColor = "var(--color-" + primary + ")";
 
     var fieldBadge = node.querySelector(".badge-field");
-    fieldBadge.textContent = FIELD_LABEL[fk];
-    fieldBadge.dataset.field = fk;
+    fieldBadge.textContent = fieldLabel(course.fields);
+    fieldBadge.dataset.field = fieldKey(course.fields);
+    var badgeStyle = fieldBadgeStyle(active);
+    fieldBadge.style.background = badgeStyle.background;
+    fieldBadge.style.color = badgeStyle.color;
 
     var levelBadge = node.querySelector(".badge-level");
     levelBadge.textContent = LEVEL_LABEL[course.level] || course.level;

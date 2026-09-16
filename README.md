@@ -1,6 +1,6 @@
 # free-courses
 
-A curated, kept-current list of free online courses that award a certification, relevant to business administration and healthcare.
+A curated, kept-current list of free online courses that award a certification, relevant to business administration, healthcare, and finance.
 
 The site is plain static HTML/CSS/JS — no build step, no backend. It reads its course list from `data/courses.json` at runtime.
 
@@ -37,7 +37,7 @@ All course data lives in one file: `data/courses.json`. It's a JSON array; each 
 
 Field notes:
 
-- `fields`: array containing `"business"`, `"healthcare"`, or both (a course can legitimately serve both, e.g. healthcare management/administration courses — tag it with both rather than picking one).
+- `fields`: array containing one or more of `"business"`, `"healthcare"`, `"finance"` (a course can legitimately serve more than one, e.g. healthcare management/administration courses — tag it with all that apply rather than picking one).
 - `level`: `"introductory"`, `"intermediate"`, or `"advanced"`. Use your best judgment from the provider's own labeling; omit granularity you don't actually know rather than guessing.
 - `certificate`: `"free"` if the certificate itself is free, or `"paid"` if the course is free to take/audit but the certificate costs money or requires a paid subscription. Paid-certificate courses are still worth listing (the captain wants to judge case by case) but **must** be flagged — the site does this automatically from this field, so don't skip it.
 - `url`: must be the direct enrollment/course page on the provider's own site — not a search results page, not a redirect, not a third-party summary.

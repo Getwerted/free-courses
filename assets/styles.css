@@ -9,6 +9,8 @@
   --color-business-bg: #e9f1fb;
   --color-healthcare: #1a7f56;
   --color-healthcare-bg: #e7f6ee;
+  --color-finance: #6f42c1;
+  --color-finance-bg: #f1ebfb;
 
   --color-free: #1a7f56;
   --color-free-bg: #e7f6ee;
@@ -126,8 +128,8 @@ main.wrap {
   min-width: 0;
 }
 
-.course-card[data-primary-field="business"] { border-left-color: var(--color-business); }
-.course-card[data-primary-field="healthcare"] { border-left-color: var(--color-healthcare); }
+/* Border-left color is set inline per card (assets/app.js) since it depends on which of an
+   open-ended set of fields is primary; data-primary-field is kept only as a semantic hook. */
 
 .card-top {
   display: flex;
@@ -147,12 +149,8 @@ main.wrap {
   white-space: nowrap;
 }
 
-.badge-field[data-field="business"] { background: var(--color-business-bg); color: var(--color-business); }
-.badge-field[data-field="healthcare"] { background: var(--color-healthcare-bg); color: var(--color-healthcare); }
-.badge-field[data-field="business+healthcare"] {
-  background: linear-gradient(90deg, var(--color-business-bg) 50%, var(--color-healthcare-bg) 50%);
-  color: var(--color-text);
-}
+/* Background/color is set inline per badge (assets/app.js) so any combination of fields —
+   including ones added after this comment was written — renders correctly without new CSS. */
 
 .badge-level {
   background: #eef0f2;
@@ -256,6 +254,7 @@ main.wrap {
 
     --color-business-bg: #142c47;
     --color-healthcare-bg: #123527;
+    --color-finance-bg: #2a2040;
     --color-free-bg: #123527;
     --color-paid-bg: #3a2a0f;
   }
